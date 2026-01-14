@@ -17,13 +17,21 @@ buildGoModule rec {
 
   vendorHash = "sha256-M7DQJj7oue9RJ3mKXRdUBvxK9CnA6Y9pHfO7IQDhwPo=";
 
+  subPackages = [
+    "cmd/dingo"
+    "cmd/dingo-lsp"
+    "cmd/lsp-diagcheck"
+    "cmd/lsp-hovercheck"
+    "cmd/lsptest"
+  ];
+
   ldflags = [ "-s" "-w" ];
 
   meta = {
     description = "A meta-language for Go that adds Result types, error propagation (?), and pattern matching while maintaining 100% Go ecosystem compatibility";
     homepage = "https://github.com/MadAppGang/dingo";
     changelog = "https://github.com/MadAppGang/dingo/blob/${src.rev}/CHANGELOG.md";
-    license = lib.licenses.unfree; # FIXME: nix-init did not find a license
+    license = lib.licenses.mit;
     maintainers = with lib.maintainers; [ ];
     mainProgram = "dingo";
   };

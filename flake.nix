@@ -17,7 +17,7 @@
     {
       packages = forAllSystems (pkgs: {
         dingo = pkgs.callPackage ./default.nix { };
-        default = self.packages.${pkgs.system}.dingo;
+        default = self.packages.${pkgs.stdenv.hostPlatform.system}.dingo;
       });
     };
 }
