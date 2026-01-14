@@ -1,6 +1,6 @@
 
 {
-  description = "A Nix flake for the dingo Go module";
+  description = "A Nix flake for the dingo language";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
