@@ -39,7 +39,7 @@ buildGoModule rec {
     description = "A meta-language for Go that adds Result types, error propagation (?), and pattern matching while maintaining 100% Go ecosystem compatibility";
     homepage = "https://github.com/MadAppGang/dingo";
     changelog = "https://github.com/MadAppGang/dingo/blob/${src.rev}/CHANGELOG.md";
-    license = lib.licenses.free; # Dingo hasn't determine what license
+    license = lib.licenses.free; # Dingo hasn't determined what license the project will use
     #maintainers = with lib.maintainers; [ ];
     mainProgram = "dingo";
   };
