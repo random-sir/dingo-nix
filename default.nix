@@ -19,6 +19,7 @@ buildGoModule rec {
 
   subPackages = [
     "cmd/dingo"
+    "cmd/dingo-lsp"
   ];
 
   ldflags = [ "-s" "-w" ];

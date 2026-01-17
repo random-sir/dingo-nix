@@ -19,5 +19,17 @@
         dingo = pkgs.callPackage ./default.nix { };
         default = self.packages.${pkgs.stdenv.hostPlatform.system}.dingo;
       });
+
+      apps = forAllSystems (pkgs: {
+        dingo = {
+          type = "app";
+          program = "${self.packages.${pkgs.stdenv.hostPlatform.system}.dingo}/bin/dingo";
+        };
+        dingo-lsp = {
+          type = "app";
+          program = "${self.packages.${pkgs.stdenv.hostPlatform.system}.dingo}/bin/dingo-lsp";
+        };
+        default = self.apps.${pkgs.stdenv.hostPlatform.system}.dingo;
+      });
     };
 }
